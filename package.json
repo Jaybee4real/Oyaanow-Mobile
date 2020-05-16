@@ -8,8 +8,6 @@
     "eject": "expo eject"
   },
   "dependencies": {
-    "@react-native-community/masked-view": "^0.1.6",
-    "@react-navigation/native": "^5.3.2",
     "asset": "^0.4.13",
     "expo": "^37.0.11",
     "expo-asset": "^8.1.5",
@@ -21,7 +19,8 @@
     "react-native-safe-area-context": "^0.7.3",
     "react-native-screens": "^2.2.0",
     "react-native-svg": "^12.1.0",
-    "react-native-web": "~0.11.7"
+    "react-native-web": "~0.11.7",
+    "react-router-native": "^5.2.0"
   },
   "devDependencies": {
     "babel-preset-expo": "~8.1.0",

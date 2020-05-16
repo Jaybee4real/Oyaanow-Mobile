@@ -1,9 +1,23 @@
 import React, { Component } from "react";
-import { View, Text, StyleSheet, Dimensions, TextInput } from "react-native";
+import {
+  View,
+  Text,
+  StyleSheet,
+  Dimensions,
+  TextInput,
+  Button,
+} from "react-native";
 
 import Animated, { Easing } from "react-native-reanimated";
 import { TapGestureHandler, State } from "react-native-gesture-handler";
-import { Image, Svg, Circle, ClipPath } from "react-native-svg";
+import {
+  Image,
+  Svg,
+  Circle,
+  ClipPath,
+  TouchableOpacity,
+} from "react-native-svg";
+import signUp from "./signUp";
 const { width, height } = Dimensions.get("window");
 const {
   Value,
@@ -23,7 +37,6 @@ const {
   concat,
 } = Animated;
 
-import logo from "../assets/img/logo-1.png";
 //////////////////Run Timing Method From Expo Docs///////
 function runTiming(clock, value, dest) {
   const state = {
@@ -103,7 +116,6 @@ class Index extends Component {
       extrapolate: Extrapolate.CLAMP,
     });
 
-    
     this.bgY = interpolate(this.buttonOpacity, {
       inputRange: [0, 1],
       outputRange: [-height / 3 - 50, 0],
@@ -163,14 +175,20 @@ class Index extends Component {
             />
           </Svg>
         </Animated.View>
-          <Svg 
-            style={{ height: 200, marginBottom: 160, justifyContent: "center", marginLeft: 60 }}>
-            <Image
-              href={require("../assets/img/logo-1.png")}
-              height={200}
-              width={width-120}
-            />
-          </Svg>
+        <Svg
+          style={{
+            height: 200,
+            marginBottom: 160,
+            justifyContent: "center",
+            marginLeft: 60,
+          }}
+        >
+          <Image
+            href={require("../assets/img/logo-1.png")}
+            height={200}
+            width={width - 120}
+          />
+        </Svg>
         <View style={{ height: height / 3 }}>
           <TapGestureHandler onHandlerStateChange={this.onStateChangeSignIn}>
             <Animated.View
@@ -184,21 +202,19 @@ class Index extends Component {
             </Animated.View>
           </TapGestureHandler>
 
-          <TapGestureHandler onHandlerStateChange={this.onStateChangeSignUp}>
+          <TapGestureHandler
+            onHandlerStateChange={() => this.props.history.push("/signUp")}
+          >
             <Animated.View
               style={{
                 ...styles.button,
-                backgroundColor: "#e67817",
-                marginTop: 10,
                 opacity: this.buttonOpacity,
                 transform: [{ translateY: this.buttonY }],
+                marginTop: 10,
+                backgroundColor: "#e67817",
               }}
             >
-              <Text
-                style={{ fontSize: 18, fontWeight: "bold", color: "white" }}
-              >
-                SIGN UP
-              </Text>
+              <Text style={{ fontSize: 18, fontWeight: "bold" }}>SIGN IN</Text>
             </Animated.View>
           </TapGestureHandler>
 
@@ -237,15 +253,7 @@ class Index extends Component {
               style={styles.textInput}
               placeholderTextColor="black"
             />
-            
 
-            <TextInput
-              placeholder="Password"
-              style={styles.textInput}
-              placeholderTextColor="black"
-            />
-            
-            
             <Animated.View
               style={{
                 ...styles.button,
@@ -256,18 +264,18 @@ class Index extends Component {
             >
               <Text style={{ fontSize: 18, fontWeight: "bold" }}>SIGN IN</Text>
             </Animated.View>
+
+
+            <Animated.View style={{justifyContent: "center", alignItems: 'center', flexDirection: 'row-reverse', marginTop: 10}}>
+              <Button title="SIGN UP" onPress={() => this.props.history.push("/signUp")} /><Text style={{marginRight: 10}}>Dont Have An Account?</Text> 
+            </Animated.View>
           </Animated.View>
-
-
-          {/* //////////////////////////////////////////////// */}
         </View>
       </View>
     );
   }
 }
 export default Index;
-
-
 
 const styles = StyleSheet.create({
   container: {

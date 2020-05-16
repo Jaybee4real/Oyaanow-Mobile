@@ -1,24 +1,17 @@
-import * as React from 'react';
-import { View, Text } from 'react-native';
-import { NavigationContainer } from '@react-navigation/native';
-import { createStackNavigator } from '@react-navigation/stack';
+import React, { Component } from 'react'
+import { Text, View, Button } from 'react-native'
+import {Index } from './index'
 
-function SignIn() {
-  return (
-    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-      <Text>Home Screen</Text>
-    </View>
-  );
+export class signUp extends Component {
+  render() {
+    return (
+      <View>
+        <Text> textInComponent </Text>
+        <Button style={{backgroundColor: 'white',}} title="SignIn" 
+          onPress={() => this.props.history.push('/')}/>
+      </View>
+    )
+  }
 }
 
-const Stack = createStackNavigator();
-
-function App() {
-  return (
-    <NavigationContainer>
-      <Stack.Navigator>
-        <Stack.Screen name="Home" component={SignIn} />
-      </Stack.Navigator>
-    </NavigationContainer>
-  );
-}
+export default signUp
