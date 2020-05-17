@@ -2,42 +2,60 @@ import React, { Component } from "react";
 import {
   Text,
   View,
-  Button,
   TextInput,
   StyleSheet,
   Dimensions,
 } from "react-native";
+
+import {KeyboardAwareScrollView} from 'react-native-keyboard-aware-scrollview'
 import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome";
 import { faChevronLeft } from "@fortawesome/free-solid-svg-icons";
 import { TapGestureHandler } from "react-native-gesture-handler";
+import Stack from "react-router-native-stack";
+import { NativeRouter, Switch, Route } from "react-router-native";
+
 
 const { width, height } = Dimensions.get("window");
 
 export class signUp extends Component {
   render() {
     return (
-      <View style={styles.container}>
+      <KeyboardAwareScrollView>
         <TapGestureHandler
-          onHandlerStateChange={() => this.props.history.push("/")}
+          onHandlerStateChange={() => this.props.history.push('/')}
+          style={{}}
         >
           <View
             style={{
               color: "#e67817",
-              paddingTop: 5,
               fontSize: 15,
               flexDirection: "row",
+              width : width,
+               height: 40, 
+               backgroundColor: "#e67817"
             }}
           >
             <FontAwesomeIcon
               icon={faChevronLeft}
               style={{ color: "#e67817", marginTop: 4, marginLeft: 2 }}
             />
-            <Text style={{ color: "#e67817", fontSize: 17 }}>Back (Sign In)</Text>
+            <Text style={{ color: "#e67817", fontSize: 17 }}>
+              Back (Sign In)
+            </Text>
           </View>
         </TapGestureHandler>
 
         <View style={{}}>
-          <Text style={{textAlign: "center", fontSize: 25, color: '#e67817', marginBottom: 15}}>Sign Up</Text>
+          <Text
+            style={{
+              textAlign: "center",
+              fontSize: 25,
+              color: "#e67817",
+              marginBottom: 15,
+            }}
+          >
+            Sign Up
+          </Text>
           <TextInput
             placeholder="Name"
             style={styles.textInput}
@@ -79,8 +97,22 @@ export class signUp extends Component {
             style={styles.textInput}
             placeholderTextColor="grey"
           />
+          <TapGestureHandler
+            onHandlerStateChange={() => this.props.history.push("/")}
+          >
+            <View
+              style={{
+                ...styles.button,
+                opacity: this.buttonOpacity,
+                marginTop: 10,
+                backgroundColor: "#e67817",
+              }}
+            >
+              <Text style={{ fontSize: 18, fontWeight: "bold" }}>SIGN UP</Text>
+            </View>
+          </TapGestureHandler>
         </View>
-      </View>
+      </KeyboardAwareScrollView>
     );
   }
 }
@@ -95,7 +127,23 @@ const styles = StyleSheet.create({
     textAlign: "center",
     fontSize: 18,
     marginHorizontal: 20,
-    color: "white",
+    color: "black",
+  },
+
+
+  button: {
+    backgroundColor: "white",
+    height: 50,
+    marginHorizontal: 60,
+    borderTopLeftRadius: 30,
+    borderTopRightRadius: 2,
+    borderBottomRightRadius: 30,
+    borderBottomLeftRadius: 2,
+    alignItems: "center",
+    justifyContent: "center",
+    shadowOffset: { width: 3, height: 3 },
+    shadowColor: "black",
+    shadowOpacity: 1,
   },
 
   container: {

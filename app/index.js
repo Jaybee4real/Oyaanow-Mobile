@@ -214,7 +214,7 @@ class Index extends Component {
                 backgroundColor: "#e67817",
               }}
             >
-              <Text style={{ fontSize: 18, fontWeight: "bold" }}>SIGN IN</Text>
+              <Text style={{ fontSize: 18, fontWeight: "bold" }}>SIGN UP</Text>
             </Animated.View>
           </TapGestureHandler>
 

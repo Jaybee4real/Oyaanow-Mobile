@@ -1,5 +1,5 @@
 import React  from "react";
-import { StyleSheet, Text, View, Image, BackHandler, ToastAndroid } from "react-native";
+import { StyleSheet, Text, View, Image, BackHandler, ToastAndroid, Dimensions, Actions } from "react-native";
 import logo from "./assets/img/bg.jpg";
 import { Asset } from "expo-asset";
 import { AppLoading } from "expo";
@@ -8,6 +8,10 @@ import signUp from "./app/signUp";
 import { NativeRouter, Switch, Route } from "react-router-native";
 import Stack from "react-router-native-stack";
 
+
+
+
+const { width, height } = Dimensions.get("window");
 
 function cacheImages(images) {
   return images.map((image) => {
@@ -42,20 +46,7 @@ componentWillUnmount(){
   }
 
 onBackPress() {
-      if (backButtonPressedOnceToExit) {
-          BackAndroid.exitApp();
-      } else {
-          if (Actions.currentScene !== 'Home') {
-              Actions.pop();
-              return true;
-          } else {
-              backButtonPressedOnceToExit = true;
-              ToastAndroid.show("Press Back Button again to exit",ToastAndroid.SHORT);
-              //setting timeout is optional
-              setTimeout( () => { backButtonPressedOnceToExit = false }, 2000);
-              return true;
-          }
-      }
+     this.props.history.goBack()
   }
 
   async _loadAssetsAsync() {
