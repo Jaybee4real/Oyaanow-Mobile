@@ -153,7 +153,7 @@ class Index extends Component {
         style={{
           flex: 1,
           justifyContent: "flex-end",
-          paddingTop: 20,
+          ...StyleSheet.absoluteFill
         }}
       >
         <Animated.View
