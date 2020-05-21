@@ -11,6 +11,7 @@ import Stack from "react-router-native-stack";
 
 
 
+
 const { width, height } = Dimensions.get("window");
 
 function cacheImages(images) {
@@ -35,19 +36,6 @@ export default class App extends React.Component {
     };
   }
 
-
-
-componentWillMount(){
-  BackHandler.addEventListener('hardwareBackPress', this.onBackPress.bind(this));
-}
-
-componentWillUnmount(){
-  BackHandler.removeEventListener('hardwareBackPress', this.onBackPress.bind(this));
-  }
-
-onBackPress() {
-     this.props.history.goBack()
-  }
 
   async _loadAssetsAsync() {
     const imageAssets = cacheImages([require("./assets/img/bg.jpg")]);

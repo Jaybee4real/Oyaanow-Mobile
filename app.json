@@ -22,8 +22,13 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
-    }
+      "supportsTablet": true,
+      "bundleIdentifier": "com.oyaa.oyaanow"
+    },
+    "android": {
+      "package": "com.oyaa.oyaanow"
+    },
+    "description": ""
   },
   "name": "oyaanow"
 }

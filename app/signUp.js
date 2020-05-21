@@ -6,10 +6,10 @@ import {
   StyleSheet,
   Dimensions,
 } from "react-native";
-
+ 
 import {KeyboardAwareScrollView} from 'react-native-keyboard-aware-scrollview'
 import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome";
-import { faChevronLeft } from "@fortawesome/free-solid-svg-icons";
+import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
 import { TapGestureHandler } from "react-native-gesture-handler";
 import Stack from "react-router-native-stack";
 import { NativeRouter, Switch, Route } from "react-router-native";
@@ -20,38 +20,36 @@ const { width, height } = Dimensions.get("window");
 export class signUp extends Component {
   render() {
     return (
-      <KeyboardAwareScrollView>
+      <KeyboardAwareScrollView style={{height: height}}>
         <TapGestureHandler
           onHandlerStateChange={() => this.props.history.push('/')}
-          style={{}}
         >
           <View
             style={{
               color: "#e67817",
-              fontSize: 15,
               flexDirection: "row",
-              width : width,
-               height: 40, 
-               backgroundColor: "#e67817"
+               width : width,
+               marginTop: 25,
+               marginBottom: 10,
+               backgroundColor: "white",
+               position: 'absolute'
             }}
           >
             <FontAwesomeIcon
-              icon={faChevronLeft}
-              style={{ color: "#e67817", marginTop: 4, marginLeft: 2 }}
+              icon={faArrowLeft}
+              size={22}
+              style={{ color: "#e67817", marginTop: 7, marginLeft: 20 , marginRight: 5}}
             />
-            <Text style={{ color: "#e67817", fontSize: 17 }}>
-              Back (Sign In)
-            </Text>
           </View>
         </TapGestureHandler>
 
-        <View style={{}}>
+        <View style={{marginTop: 35}}>
           <Text
             style={{
               textAlign: "center",
               fontSize: 25,
               color: "#e67817",
-              marginBottom: 15,
+              marginVertical: 15,
             }}
           >
             Sign Up

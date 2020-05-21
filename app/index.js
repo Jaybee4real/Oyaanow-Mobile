@@ -153,7 +153,7 @@ class Index extends Component {
         style={{
           flex: 1,
           justifyContent: "flex-end",
-          ...StyleSheet.absoluteFill
+          ...StyleSheet.absoluteFill,
         }}
       >
         <Animated.View
@@ -189,6 +189,9 @@ class Index extends Component {
             width={width - 120}
           />
         </Svg>
+        <Text style={{position: 'absolute', fontSize: 20, top: height/3 + 15, left: width / 2, color: "white"}}>...Revolutionalizing</Text>
+
+
         <View style={{ height: height / 3 }}>
           <TapGestureHandler onHandlerStateChange={this.onStateChangeSignIn}>
             <Animated.View
@@ -265,9 +268,19 @@ class Index extends Component {
               <Text style={{ fontSize: 18, fontWeight: "bold" }}>SIGN IN</Text>
             </Animated.View>
 
-
-            <Animated.View style={{justifyContent: "center", alignItems: 'center', flexDirection: 'row-reverse', marginTop: 10}}>
-              <Button title="SIGN UP" onPress={() => this.props.history.push("/signUp")} /><Text style={{marginRight: 10}}>Dont Have An Account?</Text> 
+            <Animated.View
+              style={{
+                justifyContent: "center",
+                alignItems: "center",
+                flexDirection: "row-reverse",
+                marginTop: 10,
+              }}
+            >
+              <Button
+                title="SIGN UP"
+                onPress={() => this.props.history.push("/signUp")}
+              />
+              <Text style={{ marginRight: 10 }}>Dont Have An Account?</Text>
             </Animated.View>
           </Animated.View>
         </View>
