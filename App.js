@@ -5,6 +5,7 @@ import { Asset } from "expo-asset";
 import { AppLoading } from "expo";
 import Index from "./app/index";
 import signUp from "./app/signUp";
+import signUp from "./app/Home";
 import { NativeRouter, Switch, Route } from "react-router-native";
 import Stack from "react-router-native-stack";
 
@@ -61,6 +62,7 @@ export default class App extends React.Component {
             <Switch>
               <Route exact path="/" component={Index} />
               <Route exact path="/signUp" component={signUp} />
+              <Route exact path="/home" component={Home} />
             </Switch>
         </Stack>
       </NativeRouter>

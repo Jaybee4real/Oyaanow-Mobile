@@ -96,7 +96,7 @@ export class signUp extends Component {
             placeholderTextColor="grey"
           />
           <TapGestureHandler
-            onHandlerStateChange={() => this.props.history.push("/")}
+            onHandlerStateChange={() => this.props.history.push("/home")}
           >
             <View
               style={{
