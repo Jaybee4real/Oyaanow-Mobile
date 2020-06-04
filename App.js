@@ -5,7 +5,7 @@ import { Asset } from "expo-asset";
 import { AppLoading } from "expo";
 import Index from "./app/index";
 import signUp from "./app/signUp";
-import signUp from "./app/Home";
+import Home from "./app/Home";
 import { NativeRouter, Switch, Route } from "react-router-native";
 import Stack from "react-router-native-stack";
 
