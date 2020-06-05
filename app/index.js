@@ -189,7 +189,7 @@ class Index extends Component {
             width={width - 120}
           />
         </Svg>
-        <Text style={{position: 'absolute', fontSize: 20, top: height/3 + 15, left: width / 2, color: "white"}}>...Revolutionalizing</Text>
+        {/* <Text style={{position: 'absolute', fontSize: 20, top: height/3 + 15, left: width / 2, color: "white"}}>...Revolutionalizing</Text> */}
 
 
         <View style={{ height: height / 3 }}>
